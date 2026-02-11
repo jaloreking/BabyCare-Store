@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दूध पिलाना | Feeding - 0-3 Months Baby Products | BabyCare Store</title>
+    <meta name="description" content="शिशु दूध पिलाने के उत्पाद: बोतलें, ब्रेस्ट पंप, बिब, पैसिफायर। BPA मुक्त। Baby feeding bottles, breast pumps, burp cloths. BPA free.">
+    <link rel="canonical" href="https://babycarestore.github.io/category/feeding.html">
+    <meta property="og:title" content="Feeding Products | BabyCare Store">
+    <meta property="og:description" content="Shop feeding bottles, nipples, sterilizers, and more.">
+    <meta property="og:image" content="../assets/images/babycare-og.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Baby Feeding Products",
+        "description": "0-3 months baby feeding essentials",
+        "url": "https://babycarestore.github.io/category/feeding.html"
+    }
+    </script>
+</head>
+<body>
+    <header class="site-header">[Header with ../ paths adjusted]</header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumb"><ol><li><a href="../index.html">Home</a></li><li><a href="../shop.html">Shop</a></li><li>Feeding</li></ol></nav>
+            <h1 class="page-title">दूध पिलाना | Feeding Products</h1>
+            <div class="product-grid" id="categoryProductsGrid"></div>
+        </div>
+    </main>
+    <footer class="site-footer">[Footer]</footer>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryProducts = products.filter(p => p.category === 'feeding');
+            renderProductGrid('categoryProductsGrid', categoryProducts);
+        });
+    </script>
+</body>
+</html>
