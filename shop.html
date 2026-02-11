@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>दुकान | Shop - 0-3 Months Baby Products | BabyCare Store</title>
+    <meta name="description" content="सभी शिशु उत्पाद: फीडिंग बोतल, डायपर, जैबला, बाथ केयर। All baby products: feeding bottles, cloth diapers, onesies, bath care. 75+ items.">
+    <meta name="keywords" content="baby products India, 0-3 months feeding, newborn diapers, baby jhabla, breast pump, baby wipes">
+    <link rel="canonical" href="https://babycarestore.github.io/shop.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="बेबीकेयर स्टोर | BabyCare Store - All Products">
+    <meta property="og:description" content="75+ newborn essentials. BPA free, organic, soft fabric.">
+    <meta property="og:image" content="assets/images/babycare-og.jpg">
+    <meta property="og:url" content="https://babycarestore.github.io/shop.html">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BabyCare Store - Complete Baby Shop">
+    <meta name="twitter:description" content="Shop all categories: feeding, clothing, diapering, bath & more.">
+    <meta name="twitter:image" content="assets/images/babycare-og.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    
+    <!-- Structured Data - ItemList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "All Baby Products",
+        "description": "75+ products for 0-3 months newborn",
+        "url": "https://babycarestore.github.io/shop.html",
+        "numberOfItems": 75,
+        "itemListElement": []
+    }
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <!-- Same header as index.html, copy exactly -->
+        <div class="container header-container">
+            <div class="logo-wrapper">
+                <a href="index.html" class="logo-link">
+                    <img src="assets/images/logo.svg" alt="बेबीकेयर स्टोर लोगो | BabyCare Store Logo" width="180" height="48" class="logo">
+                </a>
+            </div>
+            <button class="hamburger" id="hamburgerBtn" aria-label="मेनू खोलें | Open menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">होम | Home</a></li>
+                    <li class="nav-item"><a href="shop.html" class="nav-link active">दुकान | Shop</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">हमारे बारे में | About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">संपर्क | Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <button class="icon-btn search-toggle" id="searchToggle" aria-label="खोजें | Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                    <a href="wishlist.html" class="icon-btn wishlist-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span class="badge-count" id="wishlistCount">0</span></a>
+                    <a href="cart.html" class="icon-btn cart-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="badge-count" id="cartCount">0</span></a>
+                </div>
+            </nav>
+            <div class="search-bar" id="searchBar">
+                <input type="text" id="globalSearchInput" placeholder="उत्पाद खोजें... Search products...">
+                <button id="globalSearchBtn">खोज | Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- BREADCRUMBS -->
+            <nav aria-label="breadcrumb" class="breadcrumb">
+                <ol>
+                    <li><a href="index.html">होम | Home</a></li>
+                    <li aria-current="page">दुकान | Shop</li>
+                </ol>
+            </nav>
+            
+            <h1 class="page-title">सभी उत्पाद | All Products</h1>
+            
+            <!-- FILTER SECTION -->
+            <div class="filter-toolbar">
+                <div class="filter-group">
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">सभी श्रेणियाँ | All Categories</option>
+                        <option value="feeding">दूध पिलाना | Feeding</option>
+                        <option value="clothing">कपड़े | Clothing</option>
+                        <option value="diapering">डायपर | Diapering</option>
+                        <option value="bath">स्नान | Bath</option>
+                        <option value="sleeping">नींद | Sleeping</option>
+                        <option value="travel">यात्रा | Travel</option>
+                        <option value="health">स्वास्थ्य | Health</option>
+                        <option value="play">खेल | Play</option>
+                        <option value="laundry">लॉन्ड्री | Laundry</option>
+                    </select>
+                    
+                    <select id="priceFilter" class="filter-select">
+                        <option value="all">सभी मूल्य | All Prices</option>
+                        <option value="0-500">₹0 - ₹500</option>
+                        <option value="501-2000">₹501 - ₹2000</option>
+                        <option value="2000+">₹2000+</option>
+                    </select>
+                    
+                    <select id="sortFilter" class="filter-select">
+                        <option value="default">क्रमबद्ध | Sort By</option>
+                        <option value="price-asc">मूल्य: कम से उच्च | Price: Low to High</option>
+                        <option value="price-desc">मूल्य: उच्च से कम | Price: High to Low</option>
+                        <option value="rating">रेटिंग | Rating</option>
+                    </select>
+                </div>
+                
+                <div class="search-filter">
+                    <input type="text" id="searchFilterInput" placeholder="उत्पाद खोजें... Search products..." class="search-input">
+                    <button id="searchFilterBtn" class="btn btn-small">खोज | Go</button>
+                </div>
+            </div>
+            
+            <!-- PRODUCT COUNT AND ACTIVE FILTERS -->
+            <div class="product-stats">
+                <span id="productCount">75</span> उत्पाद | Products
+                <span id="activeFilters"></span>
+            </div>
+            
+            <!-- PRODUCT GRID -->
+            <div class="product-grid" id="shopProductsGrid"></div>
+            
+            <!-- NO PRODUCTS MESSAGE -->
+            <div id="noProductsMessage" style="display: none; text-align: center; padding: 3rem;">
+                <p>कोई उत्पाद नहीं मिला | No products found.</p>
+                <button id="clearFiltersBtn" class="btn btn-outline">फ़िल्टर साफ़ करें | Clear Filters</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER - Same as index, abbreviated for brevity but complete -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <img src="assets/images/logo-white.svg" alt="BabyCare Store" width="160" height="42" class="footer-logo">
+                <p>0-3 महीने के बच्चों के लिए प्यार और देखभाल | Love & care for 0-3 month babies.</p>
+                <p>📍 India | 🇮🇳</p>
+            </div>
+            <div class="footer-col">
+                <h4>दुकान | Shop</h4>
+                <ul>
+                    <li><a href="shop.html">सभी उत्पाद | All Products</a></li>
+                    <li><a href="category/feeding.html">दूध पिलाना | Feeding</a></li>
+                    <li><a href="category/clothing.html">कपड़े | Clothing</a></li>
+                    <li><a href="category/diapering.html">डायपर | Diapering</a></li>
+                    <li><a href="wishlist.html">पसंदीदा | Wishlist</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>सहायता | Support</h4>
+                <ul>
+                    <li><a href="about.html">हमारे बारे में | About Us</a></li>
+                    <li><a href="contact.html">संपर्क | Contact</a></li>
+                    <li><a href="privacy.html">गोपनीयता नीति | Privacy</a></li>
+                    <li><a href="return.html">वापसी नीति | Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>संपर्क करें | Get in Touch</h4>
+                <p>📧 care@babycarestore.in</p>
+                <p>📞 +91 98765 43210</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 बेबीकेयर स्टोर | BabyCare Store. सर्वाधिकार सुरक्षित | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial render of all products
+            if (typeof products !== 'undefined') {
+                renderShopProducts(products);
+                updateProductCount(products.length);
+            }
+            
+            // Set up filter event listeners
+            setupShopFilters();
+        });
+    </script>
+</body>
+</html>

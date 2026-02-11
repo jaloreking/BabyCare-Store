@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://babycarestore.github.io/sitemap.xml

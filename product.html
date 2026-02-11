@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उत्पाद विवरण | Product Details - BabyCare Store</title>
+    <meta name="description" content="0-3 महीने शिशु उत्पाद विवरण: कीमत, समीक्षा, स्टॉक। 0-3 months baby product details: price, reviews, stock.">
+    <meta name="keywords" content="baby product details, newborn feeding bottle, baby jhabla price">
+    <link rel="canonical" href="https://babycarestore.github.io/product.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Product Details - BabyCare Store">
+    <meta property="og:description" content="Detailed product information, ratings, and add to cart.">
+    <meta property="og:image" content="assets/images/babycare-og.jpg">
+    <meta property="og:url" content="https://babycarestore.github.io/product.html">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BabyCare Store - Product Details">
+    <meta name="twitter:description" content="View product specs, price, and availability.">
+    <meta name="twitter:image" content="assets/images/babycare-og.jpg">
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <!-- SAME HEADER as index.html - copy exactly, skip for brevity but assume present -->
+        <div class="container header-container">[Header identical to shop.html]</div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- BREADCRUMBS - dynamic via JS? Hardcoded structure, will be replaced -->
+            <nav aria-label="breadcrumb" class="breadcrumb" id="productBreadcrumb">
+                <ol>
+                    <li><a href="index.html">होम | Home</a></li>
+                    <li><a href="shop.html">दुकान | Shop</a></li>
+                    <li aria-current="page" id="breadcrumbProductName">उत्पाद | Product</li>
+                </ol>
+            </nav>
+            
+            <div class="product-details-container" id="productDetailsContainer">
+                <!-- Fully populated by JavaScript from data.js -->
+            </div>
+            
+            <!-- Related Products Section -->
+            <section class="related-products">
+                <h2 class="section-title">संबंधित उत्पाद | Related Products</h2>
+                <div class="product-grid" id="relatedProductsGrid"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <!-- SAME FOOTER as index.html - complete in production -->
+        <div class="container footer-container">[Footer identical to shop.html]</div>
+    </footer>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+            
+            if (productId && typeof products !== 'undefined') {
+                const product = products.find(p => p.id === productId);
+                if (product) {
+                    renderProductDetails(product);
+                    // Update breadcrumb
+                    document.getElementById('breadcrumbProductName').textContent = product.name + ' | ' + product.nameHi;
+                    
+                    // Related products (same category, exclude current)
+                    const related = products.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+                    renderProductGrid('relatedProductsGrid', related);
+                    
+                    // Structured data JSON-LD for product
+                    addProductStructuredData(product);
+                } else {
+                    window.location.href = '404.html';
+                }
+            } else {
+                window.location.href = '404.html';
+            }
+        });
+        
+        function addProductStructuredData(product) {
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.textContent = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": product.name,
+                "alternateName": product.nameHi,
+                "image": "https://babycarestore.github.io/" + product.image,
+                "description": product.description,
+                "sku": "BC-" + product.id,
+                "brand": {
+                    "@type": "Brand",
+                    "name": "BabyCare"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "url": "https://babycarestore.github.io/product.html?id=" + product.id,
+                    "priceCurrency": "INR",
+                    "price": product.price,
+                    "availability": product.stock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+                    "seller": {
+                        "@type": "Organization",
+                        "name": "BabyCare Store"
+                    }
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": product.rating,
+                    "reviewCount": product.reviews
+                }
+            });
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>

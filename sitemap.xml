@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://babycarestore.github.io/index.html</loc><priority>1.0</priority></url>
+    <url><loc>https://babycarestore.github.io/shop.html</loc><priority>0.9</priority></url>
+    <url><loc>https://babycarestore.github.io/product.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/cart.html</loc><priority>0.6</priority></url>
+    <url><loc>https://babycarestore.github.io/wishlist.html</loc><priority>0.6</priority></url>
+    <url><loc>https://babycarestore.github.io/checkout.html</loc><priority>0.5</priority></url>
+    <url><loc>https://babycarestore.github.io/about.html</loc><priority>0.5</priority></url>
+    <url><loc>https://babycarestore.github.io/contact.html</loc><priority>0.5</priority></url>
+    <url><loc>https://babycarestore.github.io/privacy.html</loc><priority>0.3</priority></url>
+    <url><loc>https://babycarestore.github.io/return.html</loc><priority>0.3</priority></url>
+    <url><loc>https://babycarestore.github.io/404.html</loc><priority>0.1</priority></url>
+    <!-- CATEGORY PAGES (9) -->
+    <url><loc>https://babycarestore.github.io/category/feeding.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/clothing.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/diapering.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/bath.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/sleeping.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/travel.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/health.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/play.html</loc><priority>0.8</priority></url>
+    <url><loc>https://babycarestore.github.io/category/laundry.html</loc><priority>0.8</priority></url>
+</urlset>

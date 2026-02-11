@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>कार्ट | Cart - BabyCare Store</title>
+    <meta name="description" content="आपका शॉपिंग कार्ट। Your shopping cart. 0-3 months baby products.">
+    <link rel="canonical" href="https://babycarestore.github.io/cart.html">
+    <meta property="og:title" content="Shopping Cart | BabyCare Store">
+    <meta property="og:description" content="Review your items before checkout.">
+    <meta property="og:image" content="assets/images/babycare-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header class="site-header">[Header same as index]</header>
+    
+    <main>
+        <div class="container">
+            <h1 class="page-title">आपकी कार्ट | Your Cart</h1>
+            
+            <div id="cartContent">
+                <!-- Cart items and summary will be injected by JS -->
+            </div>
+        </div>
+    </main>
+    
+    <footer class="site-footer">[Footer same as index]</footer>
+    
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCartPage();
+        });
+    </script>
+</body>
+</html>

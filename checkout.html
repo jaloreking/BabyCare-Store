@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>चेकआउट | Checkout - BabyCare Store</title>
+    <meta name="description" content="सुरक्षित चेकआउट। Secure checkout. COD available.">
+    <link rel="canonical" href="https://babycarestore.github.io/checkout.html">
+    <meta property="og:title" content="Checkout | BabyCare Store">
+    <meta property="og:description" content="Complete your purchase.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+</head>
+<body>
+    <header class="site-header">[Header]</header>
+    
+    <main>
+        <div class="container">
+            <h1 class="page-title">चेकआउट | Checkout</h1>
+            <div id="checkoutContent">
+                <!-- Dummy checkout form - no real payment -->
+                <div class="checkout-form">
+                    <div class="form-section">
+                        <h3>संपर्क जानकारी | Contact Information</h3>
+                        <input type="email" placeholder="ईमेल | Email" class="form-input" required>
+                    </div>
+                    <div class="form-section">
+                        <h3>पता | Shipping Address</h3>
+                        <input type="text" placeholder="पूरा नाम | Full Name" class="form-input">
+                        <input type="text" placeholder="पता | Address" class="form-input">
+                        <input type="text" placeholder="शहर | City" class="form-input">
+                        <input type="text" placeholder="पिन कोड | PIN Code" class="form-input">
+                    </div>
+                    <div class="form-section">
+                        <h3>भुगतान विधि | Payment Method</h3>
+                        <label><input type="radio" name="payment" checked> COD (Cash on Delivery)</label>
+                        <label><input type="radio" name="payment" disabled> Card (Coming Soon)</label>
+                    </div>
+                    <div id="checkoutSummary"></div>
+                    <button class="btn btn-primary btn-block" id="placeOrderBtn">ऑर्डर करें | Place Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="site-footer">[Footer]</footer>
+    
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                window.location.href = 'cart.html';
+            }
+            const total = getCartTotal();
+            document.getElementById('checkoutSummary').innerHTML = `<p>कुल राशि | Total: ₹${total}</p>`;
+            
+            document.getElementById('placeOrderBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('✅ ऑर्डर सफल! धन्यवाद | Order placed successfully! Thank you.');
+                clearCart();
+                window.location.href = 'shop.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hi, en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपर्क | Contact Us - BabyCare Store</title>
+    <meta name="description" content="बेबीकेयर स्टोर से संपर्क करें। ईमेल, फोन, या फॉर्म। Contact BabyCare Store: email, phone, or form.">
+    <link rel="canonical" href="https://babycarestore.github.io/contact.html">
+    <meta property="og:title" content="Contact BabyCare Store">
+    <meta property="og:description" content="We're here to help. Reach out for any queries.">
+    <meta property="og:image" content="assets/images/babycare-og.jpg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+</head>
+<body>
+    <header class="site-header">[Header]</header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumb"><ol><li><a href="index.html">Home</a></li><li>Contact</li></ol></nav>
+            <h1 class="page-title">संपर्क करें | Contact Us</h1>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📧 ईमेल | Email</h3>
+                    <p>care@babycarestore.in</p>
+                    <h3>📞 फोन | Phone</h3>
+                    <p>+91 98765 43210 (Mon-Sat, 10am-6pm)</p>
+                    <h3>📍 पता | Address</h3>
+                    <p>123, बेबी केयर स्ट्रीट, मुंबई, भारत - 400001</p>
+                </div>
+                <div class="contact-form">
+                    <h3>संदेश भेजें | Send Message</h3>
+                    <form id="contactForm">
+                        <input type="text" placeholder="आपका नाम | Your name" class="form-input" required>
+                        <input type="email" placeholder="ईमेल | Email" class="form-input" required>
+                        <textarea placeholder="संदेश | Message" rows="5" class="form-input" required></textarea>
+                        <button type="submit" class="btn btn-primary">भेजें | Send</button>
+                    </form>
+                    <div id="contactMessage"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">[Footer]</footer>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('contactMessage').innerHTML = '<span style="color:green;">✅ संदेश भेजा गया | Message sent. We will reply soon.</span>';
+            this.reset();
+        });
+    </script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
