@@ -2,7 +2,7 @@
 ## 🎨 Color Palette - Soft Baby Theme
 
 | Color Name | Hex Code | Usage |  
-|-----------|---------|-------|
+|-----------|---------|-------| 
 | Pastel Blue | `#E6F3FF` | Hero backgrounds, accents |
 | Pastel Pink | `#FFE9F0` | Hero gradients, hover states |
 | Cream | `#FFF9F0` | Category cards, filter bars |
