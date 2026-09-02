@@ -1,3 +1,8 @@
+# Robots.txt for Kids Shirt Studio
+# Allow all crawlers
+
 User-agent: *
 Allow: /
-Sitemap: https://babycarestore.github.io/sitemap.xml
+
+# Sitemap location
+Sitemap: https://alexalive.com/sitemap.xml
