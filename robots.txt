@@ -1,8 +1,0 @@
-# Robots.txt for Kids Shirt Studio
-# Allow all crawlers
-
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://alexalive.com/sitemap.xml
