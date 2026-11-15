@@ -1,0 +1,6 @@
+[
+{"id":"jj-001","sku":"JJ-CHK-001","name":"Classic Blue Check Shirt","price":449,"mrp":799,"sizes":["2-3Y","4-5Y","6-7Y","8-9Y"],"colors":["Blue","Navy"],"images":["images/placeholder.svg"],"desc":"Soft cotton check shirt for everyday wear.","details":"Fabric: Cotton. Full sleeves. Machine washable.","stock":50,"isNew":true,"popular":true},
+{"id":"jj-002","sku":"JJ-DNM-002","name":"Denim Look Casual Shirt","price":549,"mrp":999,"sizes":["4-5Y","6-7Y","8-9Y","10-11Y"],"colors":["Light Blue","Dark Blue"],"images":["images/placeholder.svg"],"desc":"Stylish denim-look shirt, light and comfortable.","details":"Fabric: Cotton blend. Full sleeves.","stock":30,"isNew":true,"popular":false},
+{"id":"jj-003","sku":"JJ-PRT-003","name":"Printed Half Sleeve Shirt","price":349,"mrp":599,"sizes":["2-3Y","4-5Y","6-7Y"],"colors":["Yellow","White"],"images":["images/placeholder.svg"],"desc":"Fun printed shirt for play and parties.","details":"Fabric: Cotton. Half sleeves.","stock":0,"isNew":false,"popular":true},
+{"id":"jj-004","sku":"JJ-FST-004","name":"Festive Party Wear Shirt","price":699,"mrp":1299,"sizes":["4-5Y","6-7Y","8-9Y","10-11Y","12-13Y"],"colors":["Maroon","Cream"],"images":["images/placeholder.svg"],"desc":"Premium festive shirt for weddings and functions.","details":"Fabric: Cotton silk blend. Full sleeves.","stock":20,"isNew":false,"popular":true}
+]
