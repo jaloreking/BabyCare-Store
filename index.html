@@ -9,27 +9,230 @@
 <meta property="og:title" content="Jay&Joy – Premium Kids Boys Shirts">
 <meta property="og:description" content="Premium shirts for boys. Order on WhatsApp, Cash on Delivery.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/og-banner.jpg">
-<meta property="og:url" content="https://jaloreking.github.io/BabyCare-Store/">
-<link rel="canonical" href="https://jaloreking.github.io/BabyCare-Store/">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<meta property="og:image" content="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=1200">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👕</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --brand:#0f172a;
+  --brand-2:#1e293b;
+  --accent:#f59e0b;
+  --accent-2:#d97706;
+  --wa:#25d366;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --radius:16px;
+  --radius-lg:24px;
+  --shadow:0 4px 24px rgba(15,23,42,.08);
+  --shadow-lg:0 16px 48px rgba(15,23,42,.14);
+  --max:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ============ HEADER ============ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;max-width:var(--max);margin:0 auto;position:relative;
+}
+.logo{font-weight:800;font-size:1.4rem;letter-spacing:-.03em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:500;color:var(--brand-2);font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--accent-2)}
+.nav-cta{
+  background:var(--wa);color:#fff !important;padding:10px 20px;border-radius:999px;
+  font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:6px;
+  transition:all .2s;
+}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.35)}
+.menu-btn{display:none;background:none;font-size:1.6rem;color:var(--brand)}
+
+/* ============ HERO ============ */
+.hero{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;
+  padding:72px 0 56px;
+}
+.badge{
+  display:inline-block;background:linear-gradient(135deg,#fef3c7,#fde68a);
+  color:#92400e;padding:7px 16px;border-radius:999px;font-size:.78rem;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.02;
+  letter-spacing:-.04em;font-weight:800;margin-bottom:22px;
+}
+.hero h1 em{font-style:normal;color:var(--accent-2)}
+.hero p{color:var(--muted);font-size:1.1rem;margin-bottom:30px;max-width:520px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.hero-points{list-style:none;display:flex;gap:24px;flex-wrap:wrap;color:var(--brand-2);font-size:.9rem;font-weight:600}
+.hero-points li{display:flex;align-items:center;gap:6px}
+.hero-visual{position:relative}
+.hero-visual img{
+  border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);
+  aspect-ratio:4/5;object-fit:cover;width:100%;
+}
+.hero-visual::before{
+  content:"";position:absolute;inset:-20px -20px auto auto;width:160px;height:160px;
+  background:linear-gradient(135deg,var(--accent),#fbbf24);border-radius:50%;
+  filter:blur(60px);opacity:.35;z-index:-1;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:999px;font-weight:600;font-size:.95rem;
+  transition:all .2s;
+}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-2);transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.wa:hover{background:#1eb955;transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.35)}
+.btn.ghost{background:#fff;color:var(--brand);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--brand);transform:translateY(-2px)}
+
+/* ============ SECTIONS ============ */
+.section{padding:56px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px;flex-wrap:wrap;gap:12px}
+.section-head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.03em;font-weight:800}
+.section-head p{color:var(--muted);font-size:.95rem;margin-top:4px}
+.link-arrow{color:var(--accent-2);font-weight:700;font-size:.95rem;transition:gap .2s}
+
+/* ============ PRODUCT GRID ============ */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{
+  background:var(--card);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.card-img{aspect-ratio:1;background:var(--line);overflow:hidden;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .card-img img{transform:scale(1.08)}
+.tag{
+  position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;
+  padding:4px 12px;border-radius:999px;font-size:.7rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;
+}
+.card-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.card .price{font-weight:800;color:var(--brand);font-size:1.1rem;margin-bottom:14px}
+.card .price small{font-weight:500;color:var(--muted);font-size:.8rem;text-decoration:line-through;margin-left:6px}
+.card .btn{padding:11px 16px;font-size:.85rem;margin-top:auto;width:100%}
+
+/* ============ TRUST ============ */
+.trust{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  padding:56px 0 72px;
+}
+.trust-card{
+  background:var(--card);padding:32px 26px;border-radius:var(--radius);
+  box-shadow:var(--shadow);text-align:center;transition:transform .2s;
+}
+.trust-card:hover{transform:translateY(-4px)}
+.trust-card span{font-size:2.4rem;display:block;margin-bottom:14px}
+.trust-card b{display:block;font-size:1.05rem;margin-bottom:8px;letter-spacing:-.01em}
+.trust-card p{color:var(--muted);font-size:.9rem}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  border-radius:var(--radius-lg);padding:56px 40px;text-align:center;
+  color:#fff;margin:32px 0 64px;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:"";position:absolute;top:-50%;right:-10%;width:400px;height:400px;
+  background:var(--accent);border-radius:50%;filter:blur(120px);opacity:.25;
+}
+.cta-banner h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.03em;margin-bottom:12px;position:relative}
+.cta-banner p{color:#cbd5e1;margin-bottom:28px;position:relative}
+.cta-banner .btn{position:relative}
+
+/* ============ FOOTER ============ */
+footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px;margin-top:48px}
+.footer-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-inner h4{color:#fff;font-size:1rem;margin-bottom:16px;letter-spacing:-.01em}
+.footer-inner a{display:block;color:#cbd5e1;font-size:.9rem;margin-bottom:10px;transition:color .2s}
+.footer-inner a:hover{color:var(--accent)}
+.footer-inner p{font-size:.9rem;margin-bottom:16px;line-height:1.7}
+.footer-bottom{
+  max-width:var(--max);margin:40px auto 0;padding-top:24px;
+  border-top:1px solid #334155;text-align:center;font-size:.85rem;color:#94a3b8;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding:40px 0 32px;gap:36px}
+  .hero-visual{order:-1;max-width:400px;margin:0 auto}
+  .trust{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;background:#fff;
+    flex-direction:column;gap:0;padding:12px 20px;border-bottom:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 0;width:100%}
+  .menu-btn{display:block}
+  .cta-banner{padding:44px 24px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-points{gap:12px;font-size:.85rem}
+}
+</style>
 </head>
-<body data-page="index">
-<header id="hdr"></header>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">Jay<span>&</span>Joy</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#products">Products</a>
+      <a href="#trust">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919999999999" class="nav-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </nav>
+</header>
 
 <main class="wrap">
+
+  <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-text">
+    <div>
       <span class="badge">Riddhi Siddhi Fashion</span>
-      <h1>Little Style.<br>Big Confidence.</h1>
+      <h1>Little Style.<br><em>Big Confidence.</em></h1>
       <p>Premium shirts for boys, crafted by Riddhi Siddhi Fashion. Order on WhatsApp and pay when it arrives — simple, safe, and fast.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="products.html">Shop Boys Shirts</a>
-        <a class="btn wa" id="hwa" href="#">Order on WhatsApp</a>
+        <a class="btn primary" href="#products">Shop Boys Shirts</a>
+        <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Jay%26Joy%20shirts" target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
       <ul class="hero-points">
         <li>✓ Cash on Delivery</li>
@@ -38,34 +241,121 @@
       </ul>
     </div>
     <div class="hero-visual">
-      <img src="images/hero-shirt.jpg" alt="Premium kids boys shirt" loading="eager">
+      <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80" alt="Premium kids boys shirt" loading="eager">
     </div>
   </section>
 
-  <section class="section">
+  <!-- ============ PRODUCTS ============ -->
+  <section class="section" id="products">
     <div class="section-head">
-      <h2>Popular Shirts</h2>
-      <a href="products.html" class="link-arrow">View all →</a>
+      <div>
+        <h2>Our Collection</h2>
+        <p>Premium quality shirts for boys — casual, formal &amp; party wear.</p>
+      </div>
+      <a href="https://wa.me/919999999999" class="link-arrow" target="_blank" rel="noopener">Ask for full catalogue →</a>
     </div>
-    <div class="grid" id="pop"></div>
+    <div class="grid" id="productGrid"></div>
   </section>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>New Arrivals</h2>
-      <a href="products.html" class="link-arrow">View all →</a>
-    </div>
-    <div class="grid" id="new"></div>
-  </section>
-
-  <section class="trust">
+  <!-- ============ TRUST ============ -->
+  <section class="trust" id="trust">
     <div class="trust-card"><span>🚚</span><b>Cash on Delivery</b><p>Pay only when the shirts reach you.</p></div>
     <div class="trust-card"><span>🏭</span><b>Manufacturer Direct</b><p>Retail and wholesale orders welcome.</p></div>
     <div class="trust-card"><span>💬</span><b>Easy Ordering</b><p>Send your order on WhatsApp in one tap.</p></div>
   </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="cta-banner" id="contact">
+    <h2>Ready to order?</h2>
+    <p>Send us a message on WhatsApp. We reply within minutes.</p>
+    <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+  </section>
+
 </main>
 
-<footer id="ftr"></footer>
-<script src="script.js"></script>
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Jay&Joy by Riddhi Siddhi Fashion</h4>
+      <p>Premium kids boys shirts — manufacturer &amp; wholesaler in India. Cash on Delivery available across India.</p>
+      <a href="https://wa.me/919999999999" target="_blank" rel="noopener">💬 +91 99999 99999</a>
+      <a href="mailto:info@riddhisiddhifashion.com">✉ info@riddhisiddhifashion.com</a>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <a href="#products">All Shirts</a>
+      <a href="#products">New Arrivals</a>
+      <a href="#products">Popular</a>
+    </div>
+    <div>
+      <h4>Info</h4>
+      <a href="#trust">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919999999999" target="_blank" rel="noopener">Shipping &amp; COD</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> Riddhi Siddhi Fashion. All rights reserved.
+  </div>
+</footer>
+
+<script>
+// ========== CONFIG — APNA NUMBER YAHAN DAALEIN ==========
+const WHATSAPP = "919999999999"; // ⚠️ apna real number (91 ke saath, bina +)
+
+// ========== PRODUCTS — APNE PRODUCTS YAHAN DAALEIN ==========
+// Images online se aa rahi hain (Unsplash). Aap apni images ka URL bhi daal sakte hain.
+const PRODUCTS = [
+  { name:"Cotton Casual Shirt",  price:499, old:699, img:"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500&q=80", tag:"Popular" },
+  { name:"Formal Check Shirt",   price:599, old:799, img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80", tag:"Popular" },
+  { name:"Party Wear Shirt",     price:649, old:899, img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80", tag:"New" },
+  { name:"Printed Kids Shirt",   price:449, old:599, img:"https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=500&q=80", tag:"New" },
+  { name:"Denim Style Shirt",    price:699, old:999, img:"https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=500&q=80", tag:"Popular" },
+  { name:"Striped Cotton Shirt", price:549, old:749, img:"https://images.unsplash.com/photo-1626497764746-6dc36546b388?w=500&q=80", tag:"New" },
+  { name:"Premium Formal Shirt", price:749, old:1099, img:"https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&q=80", tag:"Popular" },
+  { name:"Festive Party Shirt",  price:799, old:1199, img:"https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&q=80", tag:"New" },
+];
+
+// ========== RENDER PRODUCTS ==========
+function renderProducts(){
+  const grid = document.getElementById("productGrid");
+  grid.innerHTML = PRODUCTS.map(p => {
+    const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
+      `Hi, I want to order: ${p.name} (₹${p.price})`
+    )}`;
+    return `
+      <article class="card">
+        <div class="card-img">
+          <img src="${p.img}" alt="${p.name}" loading="lazy">
+          <span class="tag">${p.tag}</span>
+        </div>
+        <div class="card-body">
+          <h3>${p.name}</h3>
+          <div class="price">₹${p.price} <small>₹${p.old}</small></div>
+          <a class="btn wa" target="_blank" rel="noopener" href="${waLink}">Order on WhatsApp</a>
+        </div>
+      </article>`;
+  }).join("");
+}
+
+// ========== MOBILE MENU ==========
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
+});
+
+// ========== SMOOTH SCROLL CLOSE ==========
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById("navLinks").classList.remove("open");
+  });
+});
+
+// ========== YEAR ==========
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// ========== INIT ==========
+renderProducts();
+</script>
 </body>
 </html>
