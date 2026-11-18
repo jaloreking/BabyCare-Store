@@ -130,4 +130,79 @@ function renderProducts(){
   grid.innerHTML = list.map((p) => {
     const idx = PRODUCTS.indexOf(p);
     const discount = Math.round((1 - p.price / p.old) * 100);
-    const stars = "★".repeat(Math.round(p.rating)) + "☆".repeat(5 - Math.round
+    const stars = "★".repeat(Math.round(p.rating)) + "☆".repeat(5 - Math.round(p.rating));
+    const tagClass = p.tag === "Bestseller" ? "tag bestseller" : "tag";
+
+    const defaultSize = selectedAge && p.sizes.includes(selectedAge)
+      ? selectedAge : p.sizes[0];
+    const sizeOptions = p.sizes.map(s =>
+      `<option value="${s}" ${s === defaultSize ? "selected" : ""}>${s}</option>`).join("");
+
+    return `
+      <article class="card">
+        <div class="card-img">
+          <img src="${p.img}" alt="${p.name}" loading="lazy">
+          <span class="${tagClass}">${p.tag}</span>
+        </div>
+        <div class="card-body">
+          <div class="rating">
+            <span class="stars">${stars}</span>
+            <span class="count">${p.rating} (${p.reviews})</span>
+          </div>
+          <h3>${p.name}</h3>
+          <div class="price-row">
+            <span class="price">₹${p.price}</span>
+            <span class="old-price">₹${p.old}</span>
+            <span class="discount">${discount}% OFF</span>
+          </div>
+          <div class="prod-badges">
+            <span>100% Cotton</span>
+            <span>7-Day Exchange</span>
+            <span>COD Available</span>
+          </div>
+          <div class="size-row">
+            <label for="size-${idx}">Size</label>
+            <select class="size-select" id="size-${idx}">${sizeOptions}</select>
+          </div>
+          <button class="btn wa buy-btn" data-idx="${idx}" style="margin-top:auto;width:100%">
+            🛒 Buy Now — ₹${p.price}
+          </button>
+        </div>
+      </article>`;
+  }).join("");
+
+  grid.querySelectorAll(".buy-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const idx = btn.dataset.idx;
+      const p = PRODUCTS[idx];
+      const size = document.getElementById("size-" + idx).value;
+      const msg = `Hi, I want to buy:\n\n👕 ${p.name}\n📏 Size: ${size}\n💰 Price: ₹${p.price}\n\nPlease confirm availability and delivery.`;
+      window.open(waUrl(msg), "_blank");
+    });
+  });
+}
+
+// ============================================================
+// WhatsApp links auto-init
+// ============================================================
+function initWaLinks(){
+  document.querySelectorAll(".wa-link").forEach(a => {
+    a.href = waUrl(a.dataset.msg || "Hi");
+  });
+}
+
+// ============================================================
+// Mobile menu
+// ============================================================
+document.getElementById("menuBtn").addEventListener("click", () =>
+  document.getElementById("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a =>
+  a.addEventListener("click", () =>
+    document.getElementById("navLinks").classList.remove("open")));
+
+// ============================================================
+// INIT
+// ============================================================
+document.getElementById("year").textContent = new Date().getFullYear();
+initWaLinks();
+renderAgeGrid();
