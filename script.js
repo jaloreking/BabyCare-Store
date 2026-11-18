@@ -1,145 +1,133 @@
-// ================= CONFIG =================
-const CONFIG = {
-  brand: "Jay&Joy",
-  parent: "Riddhi Siddhi Fashion",
-  whatsapp: "919999999999", // ⚠️ APNA NUMBER YAHAN DAALEIN (country code ke saath, bina +)
-  phone: "+91 99999 99999",
-  email: "info@riddhisiddhifashion.com",
-  address: "Jalore, Rajasthan, India"
-};
+// ============================================================
+// WhatsApp Number (country code 91 + number)
+// ============================================================
+const WHATSAPP = "919782736969";
 
-// ================= PRODUCTS =================
-// ⚠️ Apni real products aur photos yahan update karein
-const PRODUCTS = [
-  { id:1, name:"Cotton Casual Shirt",     price:499, img:"images/p1.jpg", tags:["popular","casual"] },
-  { id:2, name:"Formal Check Shirt",      price:599, img:"images/p2.jpg", tags:["popular","formal"] },
-  { id:3, name:"Party Wear Shirt",        price:649, img:"images/p3.jpg", tags:["new","party"] },
-  { id:4, name:"Printed Kids Shirt",      price:449, img:"images/p4.jpg", tags:["new","casual"] },
-  { id:5, name:"Denim Style Shirt",       price:699, img:"images/p5.jpg", tags:["popular","casual"] },
-  { id:6, name:"Striped Cotton Shirt",    price:549, img:"images/p6.jpg", tags:["new","casual"] },
-  { id:7, name:"Premium Formal Shirt",    price:749, img:"images/p7.jpg", tags:["formal","popular"] },
-  { id:8, name:"Festive Party Shirt",     price:799, img:"images/p8.jpg", tags:["party","new"] },
+// ============================================================
+// AGE GROUPS
+// ============================================================
+const AGE_GROUPS = [
+  { size:"0-1Y",   label:"0–1 Year",   emoji:"👶" },
+  { size:"2-3Y",   label:"2–3 Years",  emoji:"🧒" },
+  { size:"4-5Y",   label:"4–5 Years",  emoji:"🧒" },
+  { size:"6-7Y",   label:"6–7 Years",  emoji:"🧑" },
+  { size:"8-9Y",   label:"8–9 Years",  emoji:"🧑" },
+  { size:"10-12Y", label:"10–12 Years",emoji:"👦" },
+  { size:"13-14Y", label:"13–14 Years",emoji:"🧑" },
+  { size:"15-16Y", label:"15–16 Years",emoji:"🧑" }
 ];
 
-// ================= HEADER =================
-function renderHeader(){
-  const el = document.getElementById("hdr");
-  if(!el) return;
-  const page = document.body.dataset.page || "";
-  const isActive = p => page === p ? 'class="active"' : '';
-  el.innerHTML = `
-    <nav class="nav">
-      <a href="index.html" class="logo">Jay<span>&</span>Joy</a>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" ${isActive("index")}>Home</a>
-        <a href="products.html" ${isActive("products")}>Products</a>
-        <a href="about.html" ${isActive("about")}>About</a>
-        <a href="contact.html" ${isActive("contact")}>Contact</a>
-        <a href="https://wa.me/${CONFIG.whatsapp}" class="nav-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-    </nav>`;
-  document.getElementById("menuBtn").addEventListener("click", ()=>{
-    document.getElementById("navLinks").classList.toggle("open");
+// ============================================================
+// PRODUCTS (edit images, prices, sizes as needed)
+// ============================================================
+const PRODUCTS = [
+  { name:"Cotton Casual Shirt", price:499, old:699,
+    img:"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500&q=80",
+    tag:"Bestseller", rating:4.8, reviews:124,
+    sizes:["0-1Y","2-3Y","4-5Y","6-7Y","8-9Y","10-12Y"] },
+  { name:"Formal Check Shirt", price:599, old:799,
+    img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80",
+    tag:"Popular", rating:4.7, reviews:89,
+    sizes:["0-1Y","2-3Y","4-5Y","6-7Y","8-9Y"] },
+  { name:"Party Wear Shirt", price:649, old:899,
+    img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500&q=80",
+    tag:"New", rating:4.9, reviews:56,
+    sizes:["2-3Y","4-5Y","6-7Y","8-9Y","10-12Y","13-14Y","15-16Y"] },
+  { name:"Printed Kids Shirt", price:449, old:599,
+    img:"https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=500&q=80",
+    tag:"New", rating:4.6, reviews:38,
+    sizes:["0-1Y","2-3Y","4-5Y","6-7Y"] },
+  { name:"Denim Style Shirt", price:699, old:999,
+    img:"https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=500&q=80",
+    tag:"Popular", rating:4.8, reviews:71,
+    sizes:["6-7Y","8-9Y","10-12Y","13-14Y","15-16Y"] },
+  { name:"Striped Cotton Shirt", price:549, old:749,
+    img:"https://images.unsplash.com/photo-1626497764746-6dc36546b388?w=500&q=80",
+    tag:"New", rating:4.7, reviews:43,
+    sizes:["0-1Y","2-3Y","4-5Y","6-7Y","8-9Y"] },
+  { name:"Premium Formal Shirt", price:749, old:1099,
+    img:"https://images.unsplash.com/photo-1603252109303-2751441dd157?w=500&q=80",
+    tag:"Bestseller", rating:4.9, reviews:112,
+    sizes:["8-9Y","10-12Y","13-14Y","15-16Y"] },
+  { name:"Festive Party Shirt", price:799, old:1199,
+    img:"https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&q=80",
+    tag:"New", rating:4.8, reviews:29,
+    sizes:["2-3Y","4-5Y","6-7Y","8-9Y","10-12Y","13-14Y"] }
+];
+
+let selectedAge = null;
+
+// ============================================================
+// Helper: WhatsApp link
+// ============================================================
+function waUrl(msg){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+}
+
+// ============================================================
+// Render age selector
+// ============================================================
+function renderAgeGrid(){
+  const grid = document.getElementById("ageGrid");
+  grid.innerHTML = AGE_GROUPS.map(a => {
+    const count = PRODUCTS.filter(p => p.sizes.includes(a.size)).length;
+    return `<button class="age-btn" data-size="${a.size}">
+      <span class="age-emoji">${a.emoji}</span>
+      <span class="age-label">${a.label}</span>
+      <span class="age-count">${count} shirts</span>
+    </button>`;
+  }).join("");
+
+  grid.querySelectorAll(".age-btn").forEach(btn => {
+    btn.addEventListener("click", () => selectAge(btn.dataset.size));
   });
 }
 
-// ================= FOOTER =================
-function renderFooter(){
-  const el = document.getElementById("ftr");
-  if(!el) return;
-  el.innerHTML = `
-    <div class="footer-inner">
-      <div>
-        <h4>Jay&Joy by Riddhi Siddhi Fashion</h4>
-        <p>Premium kids boys shirts — manufacturer &amp; wholesaler in India. Cash on Delivery available across India.</p>
-        <a href="https://wa.me/${CONFIG.whatsapp}" target="_blank" rel="noopener">💬 ${CONFIG.phone}</a>
-        <a href="mailto:${CONFIG.email}">✉ ${CONFIG.email}</a>
-      </div>
-      <div>
-        <h4>Shop</h4>
-        <a href="products.html">All Shirts</a>
-        <a href="products.html?filter=new">New Arrivals</a>
-        <a href="products.html?filter=popular">Popular</a>
-        <a href="products.html?filter=formal">Formal</a>
-      </div>
-      <div>
-        <h4>Info</h4>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="shipping.html">Shipping &amp; COD</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © ${new Date().getFullYear()} Riddhi Siddhi Fashion. All rights reserved.
+// ============================================================
+// Age select → filter products
+// ============================================================
+function selectAge(size){
+  selectedAge = size;
+  document.querySelectorAll(".age-btn").forEach(b =>
+    b.classList.toggle("active", b.dataset.size === size));
+
+  const ageLabel = AGE_GROUPS.find(a => a.size === size)?.label || size;
+  document.getElementById("filterAge").textContent = ageLabel;
+  document.getElementById("filterBar").classList.add("show");
+  document.getElementById("products").classList.add("show");
+  document.getElementById("productSub").textContent =
+    `Showing ${PRODUCTS.filter(p => p.sizes.includes(size)).length} shirts available in ${ageLabel}.`;
+
+  renderProducts();
+  document.getElementById("products").scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+function clearFilter(){
+  selectedAge = null;
+  document.querySelectorAll(".age-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById("filterBar").classList.remove("show");
+  document.getElementById("products").classList.remove("show");
+  document.getElementById("age-select").scrollIntoView({ behavior:"smooth", block:"start" });
+}
+
+// ============================================================
+// Render filtered products
+// ============================================================
+function renderProducts(){
+  const grid = document.getElementById("productGrid");
+  const list = selectedAge
+    ? PRODUCTS.filter(p => p.sizes.includes(selectedAge))
+    : [];
+
+  if (!list.length){
+    grid.innerHTML = `<div class="empty-state">
+      <span>👕</span>
+      Is age group mein abhi koi shirt available nahi hai.<br>Doosri age select karein ya WhatsApp pe poochein.
     </div>`;
-}
+    return;
+  }
 
-// ================= PRODUCT CARD =================
-function productCard(p){
-  const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(
-    `Hi, I want to order: ${p.name} (₹${p.price})`
-  )}`;
-  return `
-    <article class="card">
-      <div class="card-img"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='images/placeholder.svg'"></div>
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <div class="price">₹${p.price}</div>
-        <a class="btn wa" target="_blank" rel="noopener" href="${waLink}">Order on WhatsApp</a>
-      </div>
-    </article>`;
-}
-
-// ================= RENDER HOME PRODUCTS =================
-function renderHomeProducts(){
-  const pop = document.getElementById("pop");
-  const nw  = document.getElementById("new");
-  if(pop) pop.innerHTML = PRODUCTS.filter(p=>p.tags.includes("popular")).slice(0,4).map(productCard).join("");
-  if(nw)  nw.innerHTML  = PRODUCTS.filter(p=>p.tags.includes("new")).slice(0,4).map(productCard).join("");
-}
-
-// ================= RENDER ALL PRODUCTS + FILTER =================
-function renderAllProducts(){
-  const grid = document.getElementById("allProducts");
-  if(!grid) return;
-
-  const urlFilter = new URLSearchParams(location.search).get("filter") || "all";
-  let activeFilter = urlFilter;
-
-  const draw = () => {
-    const list = activeFilter === "all"
-      ? PRODUCTS
-      : PRODUCTS.filter(p => p.tags.includes(activeFilter));
-    grid.innerHTML = list.length
-      ? list.map(productCard).join("")
-      : `<p style="grid-column:1/-1;text-align:center;color:#64748b;padding:40px 0">No products in this category yet.</p>`;
-    document.querySelectorAll(".chip").forEach(c=>{
-      c.classList.toggle("active", c.dataset.filter === activeFilter);
-    });
-  };
-
-  document.querySelectorAll(".chip").forEach(chip=>{
-    chip.addEventListener("click", ()=>{
-      activeFilter = chip.dataset.filter;
-      draw();
-    });
-  });
-
-  draw();
-}
-
-// ================= WHATSAPP HERO BUTTON =================
-function setupWhatsApp(){
-  const el = document.getElementById("hwa");
-  if(el) el.href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('Hi, I want to know more about Jay&Joy shirts')}`;
-}
-
-// ================= INIT =================
-document.addEventListener("DOMContentLoaded", ()=>{
-  renderHeader();
-  renderFooter();
-  renderHomeProducts();
-  renderAllProducts();
-  setupWhatsApp();
-});
+  grid.innerHTML = list.map((p) => {
+    const idx = PRODUCTS.indexOf(p);
+    const discount = Math.round((1 - p.price / p.old) * 100);
+    const stars = "★".repeat(Math.round(p.rating)) + "☆".repeat(5 - Math.round
