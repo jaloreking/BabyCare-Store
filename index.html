@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -166,15 +167,18 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   .grid{grid-template-columns:1fr}
 }
 </style>
+
 </head>
 <body>
 
 <!-- TOP BAR -->
+
 <div class="topbar">
   🚚 <b>FREE Shipping</b> on orders above ₹999 &nbsp;|&nbsp; 💵 <b>Cash on Delivery</b> available across India
 </div>
 
 <!-- HEADER -->
+
 <header>
   <nav class="nav">
     <a href="#" class="logo">Jay<span>&</span>Joy</a>
@@ -183,7 +187,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
       <a href="#sizes">Size Chart</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
-      <a href="https://wa.me/919999999999" class="nav-cta" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="#" class="nav-cta wa-link" data-msg="Hi, I want to know more about Jay&Joy shirts" target="_blank" rel="noopener">💬 WhatsApp</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
   </nav>
@@ -192,6 +196,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
 <main class="wrap">
 
   <!-- HERO -->
+
   <section class="hero">
     <div>
       <span class="badge">Riddhi Siddhi Fashion</span>
@@ -199,7 +204,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
       <p>Premium shirts for boys, crafted by Riddhi Siddhi Fashion. Soft cotton, strong stitching, and colors kids love — delivered to your door with Cash on Delivery.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#products">Shop Boys Shirts</a>
-        <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Jay%26Joy%20shirts" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn wa wa-link" href="#" data-msg="Hi, I want to know more about Jay&Joy shirts" target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
       <ul class="hero-points">
         <li>✓ 7-Day Exchange</li>
@@ -213,6 +218,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   </section>
 
   <!-- TRUST STRIP -->
+
   <div class="trust-strip">
     <div><span>💵</span>Cash on Delivery</div>
     <div><span>🔄</span>7-Day Exchange</div>
@@ -221,6 +227,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   </div>
 
   <!-- PRODUCTS -->
+
   <section class="section" id="products">
     <div class="section-head">
       <div>
@@ -232,6 +239,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   </section>
 
   <!-- SIZE CHART -->
+
   <section class="section" id="sizes">
     <div class="section-head">
       <div>
@@ -257,6 +265,7 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   </section>
 
   <!-- REVIEWS -->
+
   <section class="section" id="reviews">
     <div class="section-head">
       <div>
@@ -293,21 +302,23 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
   </section>
 
   <!-- CTA BANNER -->
+
   <section class="cta-banner" id="contact">
     <h2>Ready to order?</h2>
     <p>Send us a message on WhatsApp. We reply within minutes.</p>
-    <a class="btn wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+    <a class="btn wa wa-link" href="#" data-msg="Hi, I want to place an order" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
   </section>
 
 </main>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="footer-inner">
     <div>
       <h4>Jay&Joy by Riddhi Siddhi Fashion</h4>
       <p>Premium kids boys shirts — manufacturer &amp; wholesaler in India. Cash on Delivery available across India.</p>
-      <a href="https://wa.me/919999999999" target="_blank" rel="noopener">💬 +91 99999 99999</a>
+      <a href="#" class="wa-link" data-msg="Hi" target="_blank" rel="noopener">💬 +91 99999 99999</a>
       <a href="mailto:info@riddhisiddhifashion.com">✉ info@riddhisiddhifashion.com</a>
     </div>
     <div>
@@ -319,8 +330,8 @@ footer{background:var(--brand);color:#cbd5e1;padding:56px 20px 28px}
     <div>
       <h4>Info</h4>
       <a href="#contact">Contact</a>
-      <a href="https://wa.me/919999999999" target="_blank" rel="noopener">Shipping &amp; COD</a>
-      <a href="#products">Wholesale Enquiry</a>
+      <a href="#" class="wa-link" data-msg="Hi, I have a question about shipping & COD" target="_blank" rel="noopener">Shipping &amp; COD</a>
+      <a href="#" class="wa-link" data-msg="Hi, I want to enquire about wholesale" target="_blank" rel="noopener">Wholesale Enquiry</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -336,8 +347,6 @@ const WHATSAPP = "919999999999";
 
 // ============================================================
 // ⚠️ APNE PRODUCTS YAHAN DAALEIN
-// - img: apni photo ka URL ya online image
-// - sizes: jo sizes available hain
 // ============================================================
 const PRODUCTS = [
   {
@@ -407,13 +416,21 @@ const PRODUCTS = [
 ];
 
 // ============================================================
-// PRODUCT RENDER (with size dropdown + discount + rating)
+// HELPER: WhatsApp link banao
+// ============================================================
+function waUrl(msg){
+  return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+}
+
+// ============================================================
+// PRODUCT RENDER
 // ============================================================
 function renderProducts(){
   const grid = document.getElementById("productGrid");
   grid.innerHTML = PRODUCTS.map((p, i) => {
     const discount = Math.round((1 - p.price / p.old) * 100);
-    const stars = "★".repeat(Math.round(p.rating)) + "☆".repeat(5 - Math.round(p.rating));
+    const full = Math.round(p.rating);
+    const stars = "★".repeat(full) + "☆".repeat(5 - full);
     const tagClass = p.tag === "Bestseller" ? "tag bestseller" : "tag";
     const sizeOptions = p.sizes.map(s => `<option value="${s}">${s}</option>`).join("");
 
@@ -434,72 +451,65 @@ function renderProducts(){
             <span class="old-price">₹${p.old}</span>
             <span class="discount">${discount}% OFF</span>
           </div>
-          <div class="size-row">
-            <label for="size-${i}">Select Size:</label>
-            <select class="size-select" id="size-${i}">
-              <option value="">-- Choose size --</option>
-              ${sizeOptions}
-            </select>
-          </div>
           <div class="prod-badges">
-            <span>✓ COD</span>
-            <span>✓ 7-Day Exchange</span>
-            <span>✓ 100% Cotton</span>
+            <span>100% Cotton</span>
+            <span>7-Day Exchange</span>
+            <span>COD Available</span>
           </div>
-          <button class="btn wa" style="width:100%;margin-top:auto" onclick="orderProduct(${i})">
-            💬 Order on WhatsApp
-          </button>
+          <div class="size-row">
+            <label for="size-${i}">Select Size</label>
+            <select class="size-select" id="size-${i}">${sizeOptions}</select>
+          </div>
+          <button class="btn wa order-btn" data-idx="${i}" style="margin-top:auto;width:100%">💬 Order on WhatsApp</button>
         </div>
-      </article>`;
+      </article>
+    `;
   }).join("");
+
+  // Order buttons pe click handler
+  grid.querySelectorAll(".order-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const idx = btn.dataset.idx;
+      const p = PRODUCTS[idx];
+      const size = document.getElementById("size-" + idx).value;
+      const msg = "Hi, I want to order:\n\n👕 " + p.name +
+                  "\n📏 Size: " + size +
+                  "\n💰 Price: ₹" + p.price +
+                  "\n\nPlease confirm availability.";
+      window.open(waUrl(msg), "_blank");
+    });
+  });
 }
 
 // ============================================================
-// ORDER FUNCTION — WhatsApp pe size + product bhejta hai
+// WhatsApp links (data-msg se automatic URL banti hai)
 // ============================================================
-function orderProduct(index){
-  const p = PRODUCTS[index];
-  const sizeEl = document.getElementById("size-" + index);
-  const size = sizeEl.value;
-
-  if(!size){
-    sizeEl.style.borderColor = "#dc2626";
-    sizeEl.focus();
-    alert("Please select a size first.");
-    return;
-  }
-  sizeEl.style.borderColor = "";
-
-  const message =
-`🛒 *NEW ORDER — Jay&Joy*
-
-📦 Product: ${p.name}
-📏 Size: ${size}
-💰 Price: ₹${p.price} (MRP ₹${p.old})
-🔢 Quantity: 1
-
-📍 Please share:
-- Your Name
-- Full Address
-- Pin Code
-- Mobile Number
-
-💵 Payment: Cash on Delivery`;
-
-  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+function initWaLinks(){
+  document.querySelectorAll(".wa-link").forEach(a => {
+    const msg = a.dataset.msg || "Hi";
+    a.href = waUrl(msg);
+  });
 }
 
 // ============================================================
-// MOBILE MENU + YEAR + INIT
+// MOBILE MENU
 // ============================================================
 document.getElementById("menuBtn").addEventListener("click", () => {
   document.getElementById("navLinks").classList.toggle("open");
 });
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById("navLinks").classList.remove("open"));
+document.querySelectorAll("#navLinks a").forEach(a => {
+  a.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("open");
+  });
 });
+
+// ============================================================
+// FOOTER YEAR + INIT
+// ============================================================
 document.getElementById("year").textContent = new Date().getFullYear();
+initWaLinks();
 renderProducts();
 </script>
+
 </body>
 </html>
